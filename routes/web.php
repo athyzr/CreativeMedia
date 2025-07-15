@@ -12,7 +12,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PublicContactController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\Admin\DashboardController;
-// use App\Http\Controllers\PublicController;
 
 
 // Public Routes
@@ -33,12 +32,6 @@ Route::get('/artikel', [PublicController::class, 'artikel'])->name('artikel');
 Route::get('/artikel/{id}', [PublicController::class, 'show'])->name('articles.show');
 Route::get('/bidangstudi/{id}', [StudyFieldController::class, 'show'])->name('bidangstudi.show');
 Route::get('/layananjasa/{id}', [ServiceController::class, 'showPublic'])->name('layananjasa.show');
-
-
-
-// Route::get('/', [PublicController::class, 'home'])->name('home');
-// Route::get('/tentang', [PublicController::class, 'tentang'])->name('tentang');
-// Route::get('/layanan', [PublicController::class, 'layanan'])->name('layanan');
 Route::get('/hubungi', [PublicController::class, 'hubungi'])->name('hubungi');
 
 
@@ -47,7 +40,6 @@ Route::get('/hubungi', [PublicController::class, 'hubungi'])->name('hubungi');
 Route::get('/contact', [PublicContactController::class, 'showForm'])->name('contact.form');
 Route::post('/contact', [PublicContactController::class, 'submitForm'])->name('contact.submit');
 
-// Auth routes (login, register, etc)
 Auth::routes();
 
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
